@@ -1,38 +1,1097 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+div.header {
+  float: left;
+  width: 100%;
+  height: auto;
+  background-image: url("../public/assets/nature/leavesFinal.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid #64DD17;
+  white-space: nowrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header img {
+  float: left;
+  width: 6%;
+  height: auto;
+  border: 2px solid #2E7D32;
+  margin: 9px 3px 3px 130px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.header h2 {
+  font-size: 2.2em;
+  float: left;
+  font-family: Monotype Corsiva;
+  padding: 0px 10px 0px 10px;
+  margin: 5px 0px;
+  color: #64DD17;
+  white-space: nowrap;
+}
+
+.header span {
+  font-family: Gabriola;
+  font-size: 0.7em;
+  margin: -5px 10px 0px 100px;
+  padding: -2px 10px 0px 5px;
+  font-weight: normal;
+  color: #FFEA00;
+  white-space: nowrap;
+}
+
+.header p {
+  float: right;
+  font-size: 1.2em;
+  color: #FFEA00;
+}
+
+.header p a {
+  text-decoration: none;
+  color: #FFEA00;
+  float: right;
+  white-space: nowrap;
+  padding: 15px 25px;
+}
+
+.nav ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 7px 20px 7px 20px;
+  font-weight: 500;
+}
+
+.nav a {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav li:hover {
+  text-decoration: none;
+  color: black;
+  background-color: #8BC34A;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav a:hover {
+  color: black;
+}
+
+.nav ul {
+  background-color: #202020;
+  clear: both;
+}
+
+.dropbtn {
+  background-color: #202020;
+  color: white;
+  padding: 3px 20px 3px 20px;
+  font-weight: 500;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  font-family: times new roman;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #8BC34A;
+  color: white;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #202020;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #8BC34A;
+}
+
+@media only screen and (min-width: 768px) {
+  .menu {
+    width: 20%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .mainPic {
+    width: 100%;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .menu {
+    width: 20%;
+  }
+
+  .loginBlock {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .menu {
+    width: 20%;
+  }
+
+  .bonsai {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .follow {
+    width: 25%;
+  }
+
+  .support {
+    width: 50%;
+  }
+
+  .account {
+    width: 75%;
+  }
+
+  .useful {
+    width: 100%;
+  }
+}
+
+.menu {
+  /* float: left; */
+  /* margin: 5px 10px 10px 10px; */
+  width: 100%;
+  color: white;
+  background-color: #202020;
+  /* padding: 10px 0px 10px 0px; */
+  border-radius: 7px;
+}
+
+.links {
+  display: block;
+  padding: 15px 38px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.links:hover {
+  display: block;
+  padding: 15px 38px;
+  color: black;
+  text-decoration: none;
+  font-size: 1.2em;
+  background-color: #AED581;
+}
+
+.menu p {
+  padding: 15px 0px 15px 30px;
+  font-size: 1.05em;
+  font-weight: 600;
+  font-family: Constantia;
+  border-bottom: 3px ridge #4CAF50;
+  margin: auto;
+}
+
+.mainPic img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  float: left;
+  padding: 7px 5px 5px 5px;
+}
+
+.overview {
+  position: absolute;
+  top: 270px;
+  left: 400px;
+  width: 25%;
+  height: auto;
+}
+
+.overview p {
+  font-size: 2em;
+  font-family: Segoe Print;
+}
+
+.productsAvailable {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 20px 10px 10px 17px;
+}
+
+@media only screen and (max-width: 500px) {
+  .menu {
+    display: none;
+  }
+
+  /* .mainPic {
+    position: relative;
+    /* width: 120%; */
+  /* height: auto; */
+  /* float: left;
+    padding: 0px;
+    margin: 0px; */
+  /* } */
+  */ .header img {
+    padding: 0px;
+    margin: 5px;
+  }
+
+  .header span {
+    padding: 0px 0px 0px -30px;
+    margin: -10px 0 0 0px;
+    font-size: 0.6em;
+    float: left;
+  }
+
+  .header h2 {
+    font-size: 1em;
+    margin: 3px;
+  }
+
+  .header p a {
+    font-size: 0.9em;
+    padding: 10px 3px;
+    margin: 0px;
+  }
+
+  .header p {
+    font-size: 0.7em;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .nav {
+    width: 100%;
+    height: auto;
+  }
+
+  div.overview {
+    position: absolute;
+    top: 180px;
+    left: 50px;
+    width: 25%;
+    height: auto;
+    line-height: 17px;
+    font-size: 0.5em;
+  }
+
+  footer {
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  .follow {
+    float: left;
+    width: 100%;
+    height: auto;
+  }
+
+  .support {
+    width: 100%;
+    height: auto;
+  }
+
+  .account {
+    width: 100%;
+    height: auto;
+  }
+
+  .useful {
+    width: 100%;
+    height: auto;
+  }
+
+  .loginBlock {
+    width: 100%;
+    height: auto;
+  }
+
+  div.createAccount {
+    width: 100%;
+    height: auto;
+  }
+
+  div.alreadyUser {
+    width: 100%;
+    height: auto;
+  }
+
+  .productsAvailable {
+    width: 100%;
+    height: auto;
+  }
+
+  .productsAvailable h2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .productsAvailable h3 {
+    width: 100%;
+    height: auto;
+  }
+
+  .fruitbonsai {
+    margin-left: 20px;
+    padding: 20px;
+  }
+
+  div.Description {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+@media only screen and (max-width: 1030px) {
+  .menu {
+    display: none;
+  }
+
+  .header {
+    width: 100%;
+    height: auto;
+  }
+
+  .mainPic img {
+    width: 100%;
+    height: auto;
+    float: left;
+    padding: 0px;
+    margin: 10px 0px 0 0;
+  }
+
+  .header img {
+    padding: 0px;
+    margin: 5px;
+  }
+
+  .header span {
+    padding: 0px;
+    font-size: 0.9em;
+    float: left;
+  }
+
+  .header h2 {
+    font-size: 1.2em;
+  }
+
+  .header p {
+    font-size: 1em;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .overview {
+    top: 200px;
+    left: 150px;
+  }
+
+  .overview p {
+    font-size: 1.6em;
+  }
+
+  footer {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    padding-top: 5px;
+  }
+
+  div.follow {
+    width: 100%;
+    height: auto;
+    margin: -20px 0 0 0;
+  }
+
+  div.footer p {
+    padding-left: 50px;
+  }
+
+  div.support {
+    width: 100%;
+    height: auto;
+    margin: -17px 0 0 0;
+    padding: 0px;
+  }
+
+  div.support ul,
+  h3 {
+    padding-left: 30px;
+  }
+
+  div.account {
+    width: 100%;
+    height: auto;
+    margin: -17px 0 0 0;
+  }
+
+  div.account ul,
+  h3 {
+    padding-left: 30px;
+  }
+
+  div.useful {
+    width: 100%;
+    height: auto;
+    margin: -17px 0 0 0;
+  }
+
+  div.useful ul,
+  h3 {
+    padding-left: 30px;
+  }
+
+  div .loginBlock h3 {
+    width: 100%;
+    height: auto;
+    margin-left: 15%;
+  }
+
+  div.loginBlock {
+    width: 95%;
+
+    margin: 2%;
+  }
+
+  div.createAccount {
+    width: 100%;
+    margin-left: 15%;
+
+
+  }
+
+  div.alreadyUser {
+    width: 100%;
+    margin-left: 15%;
+
+
+  }
+
+  .loginBlock [type=text] {
+    width: 100%;
+    height: auto;
+  }
+
+  .loginBlock [type=email] {
+    width: 100%;
+    height: auto;
+  }
+
+  .loginBlock [type=passowrd] {
+    width: 100%;
+    height: auto;
+  }
+
+  div.productsAvailable {
+    width: 100%;
+    height: auto;
+    margin: -20px 0px 0 0;
+    padding: 0px;
+  }
+
+  .productsAvailable h2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .productsAvailable h3 {
+    width: 100%;
+    height: auto;
+  }
+
+  div.bonsai {
+    width: 120%;
+    height: auto;
+    margin: 0;
+    text-align: center;
+  }
+
+  div.appleBonsai {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+  }
+
+  .appleImage {
+    width: 100%;
+    height: auto;
+  }
+
+  div.Description {
+    width: 100%;
+    height: auto;
+  }
+
+  div.mangoBonsai {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+  }
+
+  .mangoImage {
+    width: 100%;
+    height: auto;
+  }
+
+  div.grapeBonsai {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+  }
+
+  .grapeImage {
+    width: 100%;
+    height: auto;
+  }
+
+  div.orangeBonsai {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+  }
+
+  .orangeImage {
+    width: 100%;
+    height: auto;
+  }
+
+  div.bodhiBonsai {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+  }
+
+  .bodhiImage {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+footer {
+  clear: both;
+  width: 100%;
+  height: auto;
+}
+
+.follow {
+  float: left;
+  width: 25%;
+  height: auto;
+}
+
+.follow h3 {
+  background-color: black;
+  color: white;
+  padding: 12px 0px 0px 40px;
+  height: 40px;
+  margin-bottom: 0px;
+  border-bottom: 1px ridge white;
+}
+
+.follow p {
+  background-color: #202020;
+  color: white;
+  padding: 15px 30px;
+  height: 180px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.support {
+  float: left;
+  width: 25%;
+  height: auto;
+}
+
+.support h3 {
+  background-color: black;
+  color: white;
+  height: 40px;
+  padding-top: 12px;
+  margin-bottom: 0px;
+  border-bottom: 1px ridge white;
+}
+
+.support ul {
+  background-color: #202020;
+  color: white;
+  padding: 10px 0px 10px 0px;
+  height: 180px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.account {
+  float: left;
+  width: 25%;
+  height: auto;
+}
+
+.account h3 {
+  background-color: black;
+  color: white;
+  height: 40px;
+  padding-top: 12px;
+  margin-bottom: 0px;
+  border-bottom: 1px ridge white;
+}
+
+.account ul {
+  background-color: #202020;
+  color: white;
+  padding: 10px 0px 10px 0px;
+  height: 180px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.useful {
+  float: left;
+  width: 25%;
+  height: auto;
+}
+
+.useful h3 {
+  background-color: black;
+  color: white;
+  height: 40px;
+  padding-top: 12px;
+  margin-bottom: 0px;
+  border-bottom: 1px ridge white;
+}
+
+.useful ul {
+  background-color: #202020;
+  color: white;
+  padding: 10px 0px 10px 0px;
+  height: 180px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.copyright {
+  clear: both;
+  width: 100%;
+  height: auto;
+}
+
+.copyright h3 {
+  background-color: #101010;
+  color: white;
+  font-size: 0.9em;
+  height: 35px;
+  padding-top: 12px;
+  margin-top: 0px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.address {
+  clear: both;
+  width: 100%;
+  height: auto;
+}
+
+.address h3 {
+  background-color: #151515;
+  color: white;
+  font-size: 0.9em;
+  height: 50px;
+  padding: 5px 5px 5px 5px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+/*---------Login-----------*/
+
+div.loginBlock {
+  float: left;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.loginBlock h3 {
+  font-family: Times new roman;
+  font-size: 1.5em;
+  background-color: #202020;
+  color: #8BC34A;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  margin: 5px 10px 10px 5px;
+}
+
+.loginBlock [type=text] {
+  width: 100%;
+  height: 40px;
+  background-color: #dddddd;
+  border: 1px ridge #bbbbbb;
+  opacity: 0.5;
+}
+
+.loginBlock [type=email] {
+  width: 100%;
+  height: 40px;
+  background-color: #dddddd;
+  border: 1px ridge #bbbbbb;
+  opacity: 0.5;
+}
+
+.loginBlock [type=password] {
+  width: 100%;
+  height: 40px;
+  background-color: #dddddd;
+  border: 1px ridge #bbbbbb;
+  opacity: 0.5;
+}
+
+.loginBlock a {
+  text-decoration: none;
+}
+
+.loginBlock [type=submit] {
+  border: 1px ridge #808080;
+  padding: 10px 30px;
+  background-color: #8BC34A;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.createAccount label {
+  display: inline-block;
+  width: 70px;
+}
+
+.createAccount {
+  width: 45%;
+  height: auto;
+  float: left;
+  border: 2px solid Green;
+  margin: 2%;
+}
+
+.createAccount p {
+  padding: 10px 80px 10px 40px;
+}
+
+.createAccount h2 {
+  margin: 0px;
+  background-color: #202020;
+  padding: 10px 10px;
+  color: #8BC34A;
+  font-weight: normal;
+}
+
+.alreadyUser {
+  width: 45%;
+  float: left;
+  height: auto;
+  border: 2px solid Green;
+  margin: 2%;
+}
+
+.alreadyUser p {
+  padding: 10px 80px 10px 40px;
+}
+
+.alreadyUser h2 {
+  margin: 0px;
+  background-color: #202020;
+  padding: 10px 10px;
+  color: #8BC34A;
+  font-weight: normal;
+}
+
+.alreadyUser label {
+  display: inline-block;
+  width: 70px;
+}
+
+/*-------------------BONSAI-------------------*/
+
+.productsAvailable {
+  width: 100%;
+  height: auto;
+  padding: 0px 5px 10px 10px;
+}
+
+.productsAvailable h2 {
+  font-family: Constantia;
+  font-size: 1.1em;
+  padding: 8px 20px;
+  color: White;
+  background-color: #202020;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.productsAvailable h3 {
+  font-family: Constantia;
+  font-size: 1.1em;
+  padding: 4px 20px;
+  color: Black;
+  background-color: #8BC34A;
+  margin: 0px;
+  border-radius: 2px;
+}
+
+.bonsai {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin: 0px;
+  padding: 15px 0px 10px 5px;
+  text-align: center;
+}
+
+.bonsai .fruitbonsai {
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px 8px;
+}
+
+.bonsai .box {
+  padding: 0px 10px;
+}
+
+.bonsaiBox:link {
+  text-decoration: none;
+}
+
+.bonsaiBox:hover {
+  color: green;
+  text-decoration: none;
+}
+
+.fruitbonsai:hover {
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.50), 0 8px 25px 0 rgba(0, 0, 0, 0.50);
+}
+
+.box h3 {
+  text-align: center;
+  height: 10px;
+  font-family: cursive;
+  padding: 0px 5px 0px 5px;
+}
+
+/*---------AppleBonsai--------*/
+
+.appleBonsai {
+  width: 100%;
+  height: auto;
+  float: left;
+  padding: 10px;
+  margin-top: 0px;
+  border: 2px solid darkgreen;
+  text-align: center;
+}
+
+.Description {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.Description h2 {
+  margin: auto;
+  text-align: center;
+  font-family: impact;
+  font-weight: 500;
+  font-size: 2em;
+  color: darkgreen;
+}
+
+.select {
+  text-align: center;
+
+}
+
+.Description h3 {
+  text-align: center;
+}
+
+.Description p {
+  text-indent: 20px;
+  line-height: 25px;
+  font-family: sans-serif;
+}
+
+.Description [type=submit] {
+  text-decoration: none;
+  border: none;
+  background-color: #8BC34A;
+  color: black;
+  font-family: arial;
+  font-weight: 400;
+  padding: 10px 20px 10px 20px;
+  border-radius: 7px;
+  margin-bottom: 5px;
+}
+
+/*-------Mango Bonsai------*/
+
+.mangoBonsai {
+  width: 78%;
+  height: auto;
+  float: left;
+  padding: 10px;
+  margin-top: 0px;
+  border: 2px solid darkgreen;
+  text-align: center;
+}
+
+/*------Grape Bonsai---------*/
+
+.grapeBonsai {
+  width: 78%;
+  height: auto;
+  float: left;
+  padding: 10px;
+  margin-top: 0px;
+  border: 2px solid darkgreen;
+  text-align: center;
+}
+
+/*----------Orange Bonsai--------*/
+.orangeBonsai {
+  width: 78%;
+  height: auto;
+  float: left;
+  padding: 10px;
+  margin-top: 0px;
+  border: 2px solid darkgreen;
+  text-align: center;
+}
+
+/*------Bodhi bonsai----------*/
+.bodhiBonsai {
+  width: 78%;
+  height: auto;
+  float: left;
+  padding: 10px;
+  margin-top: 0px;
+  border: 2px solid darkgreen;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1020px) {
+  .fruitbonsai {
+    width: 24.3%;
+    height: auto;
+  }
+
+  .fruitbonsai img {
+    width: 70%;
+    height: auto;
+  }
+
+}
+
+@media only screen and (max-width: 789px) {
+  .fruitbonsai {
+    width: 32.3%;
+    height: auto;
+  }
+
+  .fruitbonsai img {
+    width: 80%;
+    height: auto;
+  }
+
+}
+
+@media only screen and (max-width: 540px) {
+  .fruitbonsai {
+    width: 50%;
+    height: auto;
+  }
+
+  .fruitbonsai img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .fruitbonsai {
+    width: 42.5%;
+    height: auto;
+  }
+
+  .fruitbonsai img {
+    width: 70%;
+    height: auto;
+  }
+
+  .box {
+    font-size: 0.7em;
+  }
+
+
+}
+
+
+.item1 {
+  grid-area: header;
+}
+
+.item2 {
+  grid-area: menu;
+}
+
+.item3 {
+  grid-area: main;
+}
+
+
+
+.item5 {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header header'
+    'menu main main main main main main'
+    'footer footer footer footer footer footer footer';
+  gap: 10px;
+  padding: 10px;
+}
+
+/* .grid-container>div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+} */
