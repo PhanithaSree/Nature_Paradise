@@ -15,6 +15,7 @@ import { IdContext } from './components/CartComponents/Cart';
 function App() {
   let id = "65c49ebb1d8645c2957c55d9";
   const p = "";
+  const msg = "Hello";
 
   return (
 
