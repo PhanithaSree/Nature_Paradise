@@ -31,6 +31,8 @@ export default function Nav() {
                         <li><a href="#">ABOUT US</a></li>
                         <li><a href="#">CONTACT US</a></li>
                         <li><a href="#">FEEDBACK</a></li>
+                        <li><a href="#">Cart</a></li>
+
                     </ul>
                 </nav>
             </div>

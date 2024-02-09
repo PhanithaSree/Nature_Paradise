@@ -1,8 +1,7 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-// Create the context
 
 export default function DisplayProduct() {
     const [product, setProduct] = useState([]);
@@ -33,8 +32,11 @@ export default function DisplayProduct() {
         fetchProductData();
     }, [category, productName]);
 
-    const handleCartClick = (id) => {
-        navigate(`/Cart?productId=${id}`);
+    const handleCartClick = (imageName) => {
+        //call the api service method add to cart.
+        // with the returned status code display added or couldn'd add
+        //navigate back to list of products;
+        navigate(`/displayProduct?prodName=${imageName}&prodCat=${category}`);
     }
 
     if (error) {
@@ -59,7 +61,8 @@ export default function DisplayProduct() {
                         <p>{product.productDescription}</p>
                         <div className="select">
                             <h3>${product.price}</h3>
-                            <input type="submit" value="Add To Cart" onClick={() => handleCartClick(product._id)} />
+                            <a href={`http://localhost:3000/category/${product.prodCat}`}><input type="submit" value="Add To Cart" onClick={() => handleCartClick("Bonsai")} /></a>
+
                             <a href={``}><input type="submit" value={``} /></a>
                         </div>
                     </div>
