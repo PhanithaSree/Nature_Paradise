@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { postUser, validateUser } from '../services/Apiservices'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-
+import LoginContext from "../LoginContext";
 
 
 export default function Login() {
+
+    const { authenticated, login, logout } = useContext(LoginContext);
+
     const navigate = useNavigate();
     const [user, setUser] = useState({
         username: "",
@@ -35,6 +38,7 @@ export default function Login() {
         postUser(user)
             .then(() => {
                 toast.success("Account created successfully!");
+                
                 setUser({ username: "", email: "", password: "" });
             })
             .catch(error => {
@@ -52,6 +56,7 @@ export default function Login() {
         try {
             await validateUser(authenticateUser)
             toast.success("Logged in successfully!");
+            login(true);
             setTimeout(() => navigate("/Cart"), 4000); // after 4000 milliseconds goes to home page
 
 

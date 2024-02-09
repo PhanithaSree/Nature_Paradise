@@ -7,6 +7,7 @@ import LoginContext from "../../LoginContext";
 
 
 
+
 export default function Cart() {
 
     const { authenticated, login, logout } = useContext(LoginContext);
@@ -77,7 +78,20 @@ export default function Cart() {
         </table>
         </>
       ) : (
-        <button onClick={login}>Login</button>
+        // <button onClick={login}>Login</button>
+        <div className="card">
+        <div className="card-body">
+          <button type="button" className="close" aria-label="Close" >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h5 className="card-title">Login</h5>
+          <p className="card-text">Please login to access the content.</p>
+          <a href="/Login"><button type="button" className="btn btn-primary">
+            Login
+          </button>
+          </a>
+        </div>
+      </div>
       )}
       <p>Authenticated: {authenticated.toString()}</p>
       {navigate('/Login')}
