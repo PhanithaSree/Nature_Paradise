@@ -47,7 +47,9 @@ const authReducer = (state, action) => {
 };
 
 function App() {
+
   const [state, dispatch] = React.useReducer(authReducer, initialState);
+
 
   return (
 
