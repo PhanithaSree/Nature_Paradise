@@ -2,11 +2,16 @@ import React, { useState, useEffect, createContext } from "react";
 import { useId } from '../displayProduct'
 import { useContext } from 'react';
 import { displayCart } from "../../services/Apiservices";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import LoginContext from "../../LoginContext";
 
-const IdContext = createContext(); // Define IdContext outside the component
+
 
 export default function Cart() {
+
+    const { authenticated, login, logout } = useContext(LoginContext);
+
+    const navigate = useNavigate();
 
     const [searchParams] = useSearchParams();
 
@@ -23,36 +28,62 @@ export default function Cart() {
     }
 
     useEffect(() => {
+        //console.log("Use Context",authenticated)
         populateCart();
         console.log("Product lengths array" + productDetails.length);
     }, [])
 
     return (
         <div>
-            <h2 className="text-center">Your Cart [4 items]</h2><br />
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {/* {products.map(product => (
-                        <tr>
-                            <td>{product.name}</td>
-                            <td>{product.price}</td>
-                            <td><Quantity price={product.price} count={product.qty} increment={() => increment(product)} decrement={() => decrement(product)} /></td>
-                            <td><Total price={product.price} quantity={product.qty} /></td>
-                        </tr>
-                    ))} */}
-
-                </tbody>
-            </table>
+            <h1>{`${authenticated}`}</h1>
+            {/* {authenticated ? (
+                 <h2 className="text-center">Your Cart [4 items]</h2><br />
+                 <table className="table">
+                     <thead>
+                         <tr>
+                             <th>Item</th>
+                             <th>Price</th>
+                             <th>Quantity</th>
+                             <th>Total</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         {/* {products.map(product => (
+                             <tr>
+                                 <td>{product.name}</td>
+                                 <td>{product.price}</td>
+                                 <td><Quantity price={product.price} count={product.qty} increment={() => increment(product)} decrement={() => decrement(product)} /></td>
+                                 <td><Total price={product.price} quantity={product.qty} /></td>
+                             </tr>
+                         ))} }
+     
+                     </tbody>
+                 </table>
+            )} */}
+            <div>
+      {authenticated ? (
+        <>
+        <h2 className="text-center">Your Cart [4 items]</h2><br />
+        <table className="table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+          
+        </table>
+        </>
+      ) : (
+        <button onClick={login}>Login</button>
+      )}
+      <p>Authenticated: {authenticated.toString()}</p>
+      {navigate('/Login')}
+    </div>
+           
         </div>
     )
 }
 
-export { IdContext }; // Export IdContext outside the component

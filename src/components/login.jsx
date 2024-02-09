@@ -52,7 +52,7 @@ export default function Login() {
         try {
             await validateUser(authenticateUser)
             toast.success("Logged in successfully!");
-            setTimeout(() => navigate("/Home"), 4000); // after 4000 milliseconds goes to home page
+            setTimeout(() => navigate("/Cart"), 4000); // after 4000 milliseconds goes to home page
 
 
         } catch (error) {

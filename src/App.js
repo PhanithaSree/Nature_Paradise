@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import Nav from '../src/components/commonComponents/nav';
 import Sidebar from './components/commonComponents/sidebar';
@@ -9,13 +9,12 @@ import PlantCategory from './components/PlantCategory';
 import DisplayProduct from './components/displayProduct';
 import Cart from './components/CartComponents/Cart';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { IdContext } from './components/CartComponents/Cart';
+// import { IdContext } from './components/CartComponents/Cart';
 // import { IdProvider } from './components/displayProduct'; // Import IdProvider
+import LoginProvider from './loginProvider';
+
 
 function App() {
-  let id = "65c49ebb1d8645c2957c55d9";
-  const p = "";
-  const msg = "Hello";
 
   return (
 
@@ -25,7 +24,7 @@ function App() {
       <Nav />
       <Sidebar />
       <div className="item3">
-        <IdContext.Provider >
+        <LoginProvider>
           <Router>
             <Routes>
               <Route path="/Home" element={<Home />} />
@@ -38,7 +37,7 @@ function App() {
 
             </Routes>
           </Router>
-        </IdContext.Provider>
+        </LoginProvider>
 
       </div>
       <Footer />
@@ -48,3 +47,4 @@ function App() {
 }
 
 export default App;
+

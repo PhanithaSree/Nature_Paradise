@@ -18,7 +18,7 @@ export default function DisplayProduct() {
             try {
                 const encodedCategory = encodeURIComponent(category);
                 const encodedProductName = encodeURIComponent(productName);
-                const response = await axios.get(`http://10.237.0.26:4000/api/product/getProduct?category=${encodedCategory}&productName=${encodedProductName}`);
+                const response = await axios.get(`http://localhost:4000/api/product/getProduct?category=${encodedCategory}&productName=${encodedProductName}`);
                 if (response.data && response.data.length > 0) {
                     setProduct(response.data);
                     setId(response.data[0]._id);
