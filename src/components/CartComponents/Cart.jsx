@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { displayCart } from "../../services/Apiservices";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import LoginContext from "../../LoginContext";
 import { useUser } from "../context/userContext";
 
 
@@ -100,7 +99,7 @@ export default function Cart() {
       </div>
       )}
       <p>isLoggedIn: {isLoggedIn.toString()}</p>
-      {navigate('/Login')}
+      {/* {navigate('/Login')} */}
     </div>
            
         </div>

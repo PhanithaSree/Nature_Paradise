@@ -4,11 +4,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import LoginContext from "../LoginContext";
+import { useUser } from "./context/userContext";
 
 
 export default function Login() {
 
-    const { authenticated, login, logout } = useContext(LoginContext);
+    // const { authenticated, login, logout } = useContext(LoginContext);
+
+    const { isLoggedIn, login, logout } = useUser();
 
     const navigate = useNavigate();
     const [user, setUser] = useState({
@@ -56,8 +59,9 @@ export default function Login() {
         try {
             await validateUser(authenticateUser)
             toast.success("Logged in successfully!");
-            login(true);
-            setTimeout(() => navigate("/Cart"), 4000); // after 4000 milliseconds goes to home page
+            login();
+            navigate('/Cart')
+            // setTimeout(() => navigate("/Cart"), 4000); // after 4000 milliseconds goes to home page
 
 
         } catch (error) {
@@ -73,7 +77,7 @@ export default function Login() {
 
     const handleValidateChange = (e) => {
 
-        let newUser = { ...user };
+        let newUser = { ...authenticateUser };
         newUser[e.target.name] = e.target.value;
         setAuthenticateUser(newUser);
 
@@ -92,7 +96,7 @@ export default function Login() {
                         <input type="email" name="email" required="required" onChange={handleRegisterChange} /></p>
                     <p><label for="password">Password </label>
                         <input type="password" name="password" required="required" onChange={handleRegisterChange} /></p>
-                    <p><a href="/Home"><input type="submit" value="Create Account" onClick={handleRegisterChange} /></a></p>
+                    <p><a href="/Home"><input type="submit" value="Create Account" onClick={handleRegisterSubmit} /></a></p>
                 </form>
             </div>
             <div class="alreadyUser">
@@ -101,8 +105,8 @@ export default function Login() {
                     <p><label for="email">Email  </label>
                         <input type="email" name="email" required="required" onChange={handleValidateChange} /></p>
                     <p><label for="password">Password </label>
-                        <input type="password" name="password" required="required" /></p>
-                    <p><a href="/Home"><input type="submit" value="Login" onChange={handleValidateChange} /></a></p>
+                        <input type="password" name="password" required="required" onChange={handleValidateChange} /></p>
+                    <p><a href="/Home"><input type="submit" value="Login" onClick={handleValidateSubmit}/></a></p>
                     <br />
                     <br />
                     <br />
@@ -110,7 +114,7 @@ export default function Login() {
 
                 </form>
             </div>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
 
         </div>
 

@@ -34,7 +34,7 @@ export default function Nav() {
                 {/* <p>Login</p> */}
                 
 
-                <p>{isLoggedIn?<a onClick={handleLogout}>Logout</a>:<a href="/Login" onClick={handleLogin}>Login</a>}</p>
+                <p>{isLoggedIn?<a onClick={handleLogout}>Logout</a>:<a href="/Login" >Login</a>}</p>
             </div>
             <div class="nav">
                 <nav>
