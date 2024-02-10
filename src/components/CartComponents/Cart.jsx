@@ -1,10 +1,19 @@
 import React, { useState, useEffect, useContext } from "react";
 import { displayCart } from "../../services/Apiservices";
-import { useSearchParams } from "react-router-dom";
-import { AuthProvider } from "../../App";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import LoginContext from "../../LoginContext";
+import { useUser } from "../context/userContext";
+
+
+
 
 export default function Cart() {
-    const { state, dispatch } = useContext(AuthProvider)
+
+    //const { isLoggedIn, login, logout } = useContext(LoginContext);
+    const { isLoggedIn ,login,logout} = useUser();
+
+    const navigate = useNavigate();
+
     const [searchParams] = useSearchParams();
 
     // State to store fetched product details
@@ -26,41 +35,75 @@ export default function Cart() {
     }
 
     useEffect(() => {
-        if (state.isLoggedIn) {
-            console.log(state);
-            populateCart();
-        }
-    }, [state.isLoggedIn]);
+        //console.log("Use Context",isLoggedIn)
+        populateCart();
+        console.log("Product lengths array" + productDetails.length);
+    }, [])
 
     return (
         <div>
-            {state.isLoggedIn ? (
-                <>
-                    <h2 className="text-center">Your Cart [{state.cart.length} items]</h2><br />
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Item</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {productDetails.map((item, index) => (
-                                <tr key={index}>
-                                    <td>{item.name}</td>
-                                    <td>{item.price}</td>
-                                    <td>{item.quantity}</td>
-                                    <td>{item.total}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </>
-            ) : (
-                <h2 className="text-center">Please log in to view your cart</h2>
-            )}
+            <h1>{`${isLoggedIn}`}</h1>
+            {/* {isLoggedIn ? (
+                 <h2 className="text-center">Your Cart [4 items]</h2><br />
+                 <table className="table">
+                     <thead>
+                         <tr>
+                             <th>Item</th>
+                             <th>Price</th>
+                             <th>Quantity</th>
+                             <th>Total</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         {/* {products.map(product => (
+                             <tr>
+                                 <td>{product.name}</td>
+                                 <td>{product.price}</td>
+                                 <td><Quantity price={product.price} count={product.qty} increment={() => increment(product)} decrement={() => decrement(product)} /></td>
+                                 <td><Total price={product.price} quantity={product.qty} /></td>
+                             </tr>
+                         ))} }
+     
+                     </tbody>
+                 </table>
+            )} */}
+            <div>
+      {isLoggedIn ? (
+        <>
+        <h2 className="text-center">Your Cart [4 items]</h2><br />
+        <table className="table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+          
+        </table>
+        </>
+      ) : (
+        // <button onClick={login}>Login</button>
+        <div className="card">
+        <div className="card-body">
+          <button type="button" className="close" aria-label="Close" >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h5 className="card-title">Login</h5>
+          <p className="card-text">Please login to access the content.</p>
+          <a href="/Login"><button type="button" className="btn btn-primary">
+            Login
+          </button>
+          </a>
+        </div>
+      </div>
+      )}
+      <p>isLoggedIn: {isLoggedIn.toString()}</p>
+      {navigate('/Login')}
+    </div>
+           
         </div>
     )
 }
+

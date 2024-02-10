@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useContext } from "react";
+import LoginContext from "../../LoginContext";
+import { useUser } from "../context/userContext";
 
 // import { NavLink } from "react-router-dom";
 export default function Nav() {
+    // const { authenticated, login, logout } = useContext(LoginContext);
+    const { isLoggedIn,login,logout } = useUser();
+    const handleLogin=()=>{
+        login()
+        }
+    const handleLogout=()=>{
+            logout()
+            }
     return (
+    
         <div class="item1">
             <div class="header" >
                 <img src='/assets/Logo/logoTreeBig.jpg' alt="Tree logo" />
                 <h2>Nature's Paradise<br />
                     <span>Make your Home a Greener Place !!</span></h2>
-                <p><a href="/login">Login</a></p>
+                {/* <p>{authenticated ? (
+                    <>
+                        <a href="/login">Login</a>
+                    </>
+                ):
+                (
+                    <>
+                        <a href="/login">Logout</a>
+                    </>
+                )}
+                    
+                </p> */}
+                {/* <p>Login</p> */}
+                
+
+                <p>{isLoggedIn?<a onClick={handleLogout}>Logout</a>:<a href="/Login" onClick={handleLogin}>Login</a>}</p>
             </div>
             <div class="nav">
                 <nav>

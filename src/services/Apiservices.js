@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const registerBaseUrl = 'http://10.237.0.26:4000/api/user/register'
+const registerBaseUrl = 'http://localhost:4000/api/user/register'
 
 //post the userdata to database.
 
@@ -21,7 +21,7 @@ const postUser = async (user) => {
     }
 }
 
-const loginBaseUrl = 'http://10.237.0.26:4000/api/user/validate';
+const loginBaseUrl = 'http://localhost:4000/api/user/validate';
 
 const validateUser = async (user) => {
     try {
@@ -49,7 +49,7 @@ const validateUser = async (user) => {
 
 
 
-const cartUrl = "http://10.237.0.26:4000/api/product/getProductById"
+const cartUrl = "http://localhost:4000/api/product/getProductById"
 
 const displayCart = async (id) => {
 

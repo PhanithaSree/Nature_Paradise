@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate, useSearchParams } from "react-router-dom";
-
+import LoginContext from "../LoginContext";
+import { validateUser } from "../services/Apiservices";
+import { useUser } from "./context/userContext";
 
 export default function DisplayProduct() {
     const [product, setProduct] = useState([]);
@@ -12,12 +14,22 @@ export default function DisplayProduct() {
     const productName = searchParams.get('prodName');
     const navigate = useNavigate();
 
+    const [authenticateUser, setAuthenticateUser] = useState({
+        email: "",
+        password: ""
+    });
+    
+
+    // const { authenticated, login, logout } = useContext(LoginContext);
+    const { isLoggedIn,login,logout } = useUser();
+
+
     useEffect(() => {
         const fetchProductData = async () => {
             try {
                 const encodedCategory = encodeURIComponent(category);
                 const encodedProductName = encodeURIComponent(productName);
-                const response = await axios.get(`http://10.237.0.26:4000/api/product/getProduct?category=${encodedCategory}&productName=${encodedProductName}`);
+                const response = await axios.get(`http://localhost:4000/api/product/getProduct?category=${encodedCategory}&productName=${encodedProductName}`);
                 if (response.data && response.data.length > 0) {
                     setProduct(response.data);
                     setId(response.data[0]._id);
@@ -32,12 +44,24 @@ export default function DisplayProduct() {
         fetchProductData();
     }, [category, productName]);
 
-    const handleCartClick = (imageName) => {
-        //call the api service method add to cart.
-        // with the returned status code display added or couldn'd add
-        //navigate back to list of products;
-        navigate(`/displayProduct?prodName=${imageName}&prodCat=${category}`);
+    const handleCartClick = async() => {
+        
+        console.log(isLoggedIn);
+        if (isLoggedIn) {
+            navigate('/Cart');
+        } else {
+            navigate('/Login')
+            // try {
+            //    await validateUser(authenticateUser);
+            //     login();
+            //     navigate('/Cart');
+            // } catch (error) {
+            //     console.error("Error validating user:", error);
+            //    // toast.error("Login failed. Please try again.");
+            // }
+        }
     }
+    
 
     if (error) {
         return <div>Error: {error}</div>;
@@ -61,9 +85,9 @@ export default function DisplayProduct() {
                         <p>{product.productDescription}</p>
                         <div className="select">
                             <h3>${product.price}</h3>
-                            <a href={`http://localhost:3000/category/${product.prodCat}`}><input type="submit" value="Add To Cart" onClick={() => handleCartClick("Bonsai")} /></a>
+                            <input type="submit" value="Add To Cart" onClick={() => handleCartClick()} />
 
-                            <a href={``}><input type="submit" value={``} /></a>
+                            <a href={``}><input type="submit" value="Back" /></a>
                         </div>
                     </div>
                 </div>
