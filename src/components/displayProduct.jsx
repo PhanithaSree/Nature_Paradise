@@ -1,8 +1,9 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate, useSearchParams } from "react-router-dom";
-
-// Create the context
+import LoginContext from "../LoginContext";
+import { validateUser } from "../services/Apiservices";
+import { useUser } from "./context/userContext";
 
 export default function DisplayProduct() {
     const [product, setProduct] = useState([]);
@@ -12,6 +13,16 @@ export default function DisplayProduct() {
     const category = searchParams.get('prodCat');
     const productName = searchParams.get('prodName');
     const navigate = useNavigate();
+
+    const [authenticateUser, setAuthenticateUser] = useState({
+        email: "",
+        password: ""
+    });
+    
+
+    // const { authenticated, login, logout } = useContext(LoginContext);
+    const { isLoggedIn,login,logout } = useUser();
+
 
     useEffect(() => {
         const fetchProductData = async () => {
@@ -33,9 +44,24 @@ export default function DisplayProduct() {
         fetchProductData();
     }, [category, productName]);
 
-    const handleCartClick = (id) => {
-        navigate(`/Cart?productId=${id}`);
+    const handleCartClick = async() => {
+        
+        console.log(isLoggedIn);
+        if (isLoggedIn) {
+            navigate('/Cart');
+        } else {
+            navigate('/Login')
+            // try {
+            //    await validateUser(authenticateUser);
+            //     login();
+            //     navigate('/Cart');
+            // } catch (error) {
+            //     console.error("Error validating user:", error);
+            //    // toast.error("Login failed. Please try again.");
+            // }
+        }
     }
+    
 
     if (error) {
         return <div>Error: {error}</div>;
@@ -59,8 +85,9 @@ export default function DisplayProduct() {
                         <p>{product.productDescription}</p>
                         <div className="select">
                             <h3>${product.price}</h3>
-                            <input type="submit" value="Add To Cart" onClick={() => handleCartClick(product._id)} />
-                            <a href={``}><input type="submit" value={``} /></a>
+                            <input type="submit" value="Add To Cart" onClick={() => handleCartClick()} />
+
+                            <a href={``}><input type="submit" value="Back" /></a>
                         </div>
                     </div>
                 </div>

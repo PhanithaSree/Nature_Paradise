@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const registerBaseUrl = 'http://localhost:7000/api/user/register'
+const registerBaseUrl = 'http://localhost:4000/api/user/register'
 
 //post the userdata to database.
 
@@ -21,17 +21,19 @@ const postUser = async (user) => {
     }
 }
 
-const loginBaseUrl = 'http://localhost:7000/api/user/validate'
+const loginBaseUrl = 'http://localhost:4000/api/user/validate';
 
 const validateUser = async (user) => {
     try {
+        console.log("Before get " + JSON.stringify(user))
         // Make a POST request to the login endpoint with user data
         const response = await axios.post(loginBaseUrl, user);
-
+        console.log("User " + JSON.stringify(response));
         // Check if the response indicates a successful validation
         if (response.status === 200) {
             // User is validated
             console.log('User is validated');
+
             return true;
         } else {
             // Validation failed
@@ -45,7 +47,9 @@ const validateUser = async (user) => {
     }
 };
 
-const cartUrl = "http://10.237.0.26:4000/api/product/getProductById"
+
+
+const cartUrl = "http://localhost:4000/api/product/getProductById"
 
 const displayCart = async (id) => {
 

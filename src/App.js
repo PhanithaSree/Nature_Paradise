@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 import './App.css';
+
 import Nav from '../src/components/commonComponents/nav';
 import Sidebar from './components/commonComponents/sidebar';
 import Footer from './components/commonComponents/footer';
@@ -9,13 +10,14 @@ import PlantCategory from './components/PlantCategory';
 import DisplayProduct from './components/displayProduct';
 import Cart from './components/CartComponents/Cart';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { IdContext } from './components/CartComponents/Cart';
-// import { IdProvider } from './components/displayProduct'; // Import IdProvider
-import LoginProvider from './loginProvider';
+// 
+export const AuthProvider = React.createContext();
+
 
 
 function App() {
 
+  
   return (
 
 
@@ -24,7 +26,7 @@ function App() {
       <Nav />
       <Sidebar />
       <div className="item3">
-        <LoginProvider>
+        
           <Router>
             <Routes>
               <Route path="/Home" element={<Home />} />
@@ -32,19 +34,16 @@ function App() {
               <Route path="*" element={<Home />} />
               <Route path="/category/:category" element={<PlantCategory />} />
               <Route path="/displayProduct" element={<DisplayProduct />} />
-
-              <Route path="/Cart" element={<Cart />} />
-
+              <Route path='/Cart' element={<Cart />} />
             </Routes>
           </Router>
-        </LoginProvider>
+       
 
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
 
   );
 }
 
 export default App;
-

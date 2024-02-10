@@ -1,10 +1,19 @@
 import React, { useContext } from "react";
 import LoginContext from "../../LoginContext";
+import { useUser } from "../context/userContext";
 
 // import { NavLink } from "react-router-dom";
 export default function Nav() {
     // const { authenticated, login, logout } = useContext(LoginContext);
+    const { isLoggedIn,login,logout } = useUser();
+    const handleLogin=()=>{
+        login()
+        }
+    const handleLogout=()=>{
+            logout()
+            }
     return (
+    
         <div class="item1">
             <div class="header" >
                 <img src='/assets/Logo/logoTreeBig.jpg' alt="Tree logo" />
@@ -22,7 +31,10 @@ export default function Nav() {
                 )}
                     
                 </p> */}
-                <p>Login</p>
+                {/* <p>Login</p> */}
+                
+
+                <p>{isLoggedIn?<a onClick={handleLogout}>Logout</a>:<a href="/Login" onClick={handleLogin}>Login</a>}</p>
             </div>
             <div class="nav">
                 <nav>
@@ -45,6 +57,8 @@ export default function Nav() {
                         <li><a href="#">ABOUT US</a></li>
                         <li><a href="#">CONTACT US</a></li>
                         <li><a href="#">FEEDBACK</a></li>
+                        <li><a href="#">Cart</a></li>
+
                     </ul>
                 </nav>
             </div>

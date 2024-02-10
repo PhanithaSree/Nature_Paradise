@@ -1,16 +1,16 @@
-import React, { useState, useEffect, createContext } from "react";
-import { useId } from '../displayProduct'
-import { useContext } from 'react';
+import React, { useState, useEffect, useContext } from "react";
 import { displayCart } from "../../services/Apiservices";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import LoginContext from "../../LoginContext";
+import { useUser } from "../context/userContext";
 
 
 
 
 export default function Cart() {
 
-    const { authenticated, login, logout } = useContext(LoginContext);
+    //const { isLoggedIn, login, logout } = useContext(LoginContext);
+    const { isLoggedIn ,login,logout} = useUser();
 
     const navigate = useNavigate();
 
@@ -21,23 +21,29 @@ export default function Cart() {
     const [error, setError] = useState(null);
 
     const populateCart = async () => {
-        const id = searchParams.get('productId');
-        let receivedproduct = await displayCart(id);
-        if (receivedproduct !== null) {
-            setProductDetails(receivedproduct)
+        try {
+            const id = searchParams.get('productId');
+            const receivedProduct = await displayCart(id);
+            console.log("YYYY", receivedProduct.data);
+            if (receivedProduct !== null) {
+                setProductDetails(receivedProduct.data); // Assuming receivedProduct.data is an array of product details
+            }
+        } catch (error) {
+            setError("Failed to fetch cart details");
+            console.error("Error fetching cart details:", error);
         }
     }
 
     useEffect(() => {
-        //console.log("Use Context",authenticated)
+        //console.log("Use Context",isLoggedIn)
         populateCart();
         console.log("Product lengths array" + productDetails.length);
     }, [])
 
     return (
         <div>
-            <h1>{`${authenticated}`}</h1>
-            {/* {authenticated ? (
+            <h1>{`${isLoggedIn}`}</h1>
+            {/* {isLoggedIn ? (
                  <h2 className="text-center">Your Cart [4 items]</h2><br />
                  <table className="table">
                      <thead>
@@ -62,7 +68,7 @@ export default function Cart() {
                  </table>
             )} */}
             <div>
-      {authenticated ? (
+      {isLoggedIn ? (
         <>
         <h2 className="text-center">Your Cart [4 items]</h2><br />
         <table className="table">
@@ -93,7 +99,7 @@ export default function Cart() {
         </div>
       </div>
       )}
-      <p>Authenticated: {authenticated.toString()}</p>
+      <p>isLoggedIn: {isLoggedIn.toString()}</p>
       {navigate('/Login')}
     </div>
            
