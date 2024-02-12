@@ -1,8 +1,9 @@
+
 * {
   box-sizing: border-box;
 }
-
-
+ 
+ 
 div.header {
   float: left;
   width: 100%;
@@ -13,7 +14,7 @@ div.header {
   border-bottom: 2px solid #64DD17;
   white-space: nowrap;
 }
-
+ 
 .header img {
   float: left;
   width: 6%;
@@ -21,7 +22,7 @@ div.header {
   border: 2px solid #2E7D32;
   margin: 9px 3px 3px 130px;
 }
-
+ 
 .header h2 {
   font-size: 2.2em;
   float: left;
@@ -31,7 +32,7 @@ div.header {
   color: #64DD17;
   white-space: nowrap;
 }
-
+ 
 .header span {
   font-family: Gabriola;
   font-size: 0.7em;
@@ -41,13 +42,13 @@ div.header {
   color: #FFEA00;
   white-space: nowrap;
 }
-
+ 
 .header p {
   float: right;
   font-size: 1.2em;
   color: #FFEA00;
 }
-
+ 
 .header p a {
   text-decoration: none;
   color: #FFEA00;
@@ -55,34 +56,34 @@ div.header {
   white-space: nowrap;
   padding: 15px 25px;
 }
-
+ 
 .nav ul li {
   list-style: none;
   display: inline-block;
   padding: 7px 20px 7px 20px;
   font-weight: 500;
-}
-
-.nav a {
+} 
+ 
+ .nav a {
   text-decoration: none;
   color: white;
 }
-
+ 
 .nav li:hover {
   text-decoration: none;
   color: black;
   background-color: #8BC34A;
 }
-
+ 
 .nav a:hover {
   color: black;
 }
-
+ 
 .nav ul {
   background-color: #202020;
   clear: both;
 }
-
+ 
 .dropbtn {
   background-color: #202020;
   color: white;
@@ -93,12 +94,12 @@ div.header {
   cursor: pointer;
   font-family: times new roman;
 }
-
+ 
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
+ 
 .dropdown-content {
   display: none;
   position: absolute;
@@ -108,75 +109,75 @@ div.header {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-
+ 
 .dropdown-content a {
   color: black;
   padding: 12px 16px 12px 16px;
   text-decoration: none;
   display: block;
 }
-
+ 
 .dropdown-content a:hover {
   background-color: #202020;
   color: white;
 }
-
+ 
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
+ 
 .dropdown:hover .dropbtn {
   background-color: #8BC34A;
 }
-
+ 
 @media only screen and (min-width: 768px) {
   .menu {
     width: 20%;
   }
-
+ 
   .mainPic {
     width: 100%;
   }
 }
-
+ 
 @media only screen and (min-width: 768px) {
   .menu {
     width: 20%;
   }
-
+ 
   .loginBlock {
     width: 100%;
   }
 }
-
+ 
 @media only screen and (min-width: 768px) {
   .menu {
     width: 20%;
   }
-
+ 
   .bonsai {
     width: 100%;
   }
 }
-
+ 
 @media only screen and (min-width: 768px) {
   .follow {
     width: 25%;
   }
-
+ 
   .support {
     width: 50%;
   }
-
+ 
   .account {
     width: 75%;
   }
-
+ 
   .useful {
     width: 100%;
   }
 }
-
+ 
 .menu {
   /* float: left; */
   /* margin: 5px 10px 10px 10px; */
@@ -186,7 +187,7 @@ div.header {
   /* padding: 10px 0px 10px 0px; */
   border-radius: 7px;
 }
-
+ 
 .links {
   display: block;
   padding: 15px 38px;
@@ -194,7 +195,7 @@ div.header {
   text-decoration: none;
   font-size: 1.2em;
 }
-
+ 
 .links:hover {
   display: block;
   padding: 15px 38px;
@@ -203,7 +204,7 @@ div.header {
   font-size: 1.2em;
   background-color: #AED581;
 }
-
+ 
 .menu p {
   padding: 15px 0px 15px 30px;
   font-size: 1.05em;
@@ -212,7 +213,7 @@ div.header {
   border-bottom: 3px ridge #4CAF50;
   margin: auto;
 }
-
+ 
 .mainPic img {
   position: relative;
   width: 100%;
@@ -220,7 +221,7 @@ div.header {
   float: left;
   padding: 7px 5px 5px 5px;
 }
-
+ 
 .overview {
   position: absolute;
   top: 270px;
@@ -228,66 +229,66 @@ div.header {
   width: 25%;
   height: auto;
 }
-
+ 
 .overview p {
-  font-size: 2em;
+  font-size: 1em;
   font-family: Segoe Print;
 }
-
+ 
 .productsAvailable {
   float: left;
   width: 100%;
   height: auto;
   padding: 20px 10px 10px 17px;
 }
-
+ 
 @media only screen and (max-width: 500px) {
   .menu {
     display: none;
   }
-
-  /* .mainPic {
+ 
+  .mainPic {
     position: relative;
-    /* width: 120%; */
-  /* height: auto; */
-  /* float: left;
+     width: 120%; 
+  height: auto; 
+   float: left;
     padding: 0px;
-    margin: 0px; */
-  /* } */
-  */ .header img {
+    margin: 0px; 
+  }
+  .header img {
     padding: 0px;
     margin: 5px;
   }
-
+ 
   .header span {
     padding: 0px 0px 0px -30px;
     margin: -10px 0 0 0px;
     font-size: 0.6em;
     float: left;
   }
-
+ 
   .header h2 {
     font-size: 1em;
     margin: 3px;
   }
-
+ 
   .header p a {
     font-size: 0.9em;
     padding: 10px 3px;
     margin: 0px;
   }
-
+ 
   .header p {
     font-size: 0.7em;
     padding: 0px;
     margin: 0px;
   }
-
+ 
   .nav {
     width: 100%;
     height: auto;
   }
-
+ 
   div.overview {
     position: absolute;
     top: 180px;
@@ -297,87 +298,87 @@ div.header {
     line-height: 17px;
     font-size: 0.5em;
   }
-
+ 
   footer {
     margin-top: 15px;
     width: 100%;
     height: auto;
     padding: 5px;
   }
-
+ 
   .follow {
     float: left;
     width: 100%;
     height: auto;
   }
-
+ 
   .support {
     width: 100%;
     height: auto;
   }
-
+ 
   .account {
     width: 100%;
     height: auto;
   }
-
+ 
   .useful {
     width: 100%;
     height: auto;
   }
-
+ 
   .loginBlock {
     width: 100%;
     height: auto;
   }
-
+ 
   div.createAccount {
     width: 100%;
     height: auto;
   }
-
+ 
   div.alreadyUser {
     width: 100%;
     height: auto;
   }
-
+ 
   .productsAvailable {
     width: 100%;
     height: auto;
   }
-
+ 
   .productsAvailable h2 {
     width: 100%;
     height: auto;
   }
-
+ 
   .productsAvailable h3 {
     width: 100%;
     height: auto;
   }
-
+ 
   .fruitbonsai {
     margin-left: 20px;
     padding: 20px;
   }
-
+ 
   div.Description {
     width: 100%;
     height: auto;
   }
-
+ 
 }
-
+ 
 @media only screen and (max-width: 1030px) {
   .menu {
     display: none;
   }
-
+ 
   .header {
     width: 100%;
     height: auto;
   }
-
+ 
   .mainPic img {
     width: 100%;
     height: auto;
@@ -385,227 +386,227 @@ div.header {
     padding: 0px;
     margin: 10px 0px 0 0;
   }
-
+ 
   .header img {
     padding: 0px;
     margin: 5px;
   }
-
+ 
   .header span {
     padding: 0px;
     font-size: 0.9em;
     float: left;
   }
-
+ 
   .header h2 {
     font-size: 1.2em;
   }
-
+ 
   .header p {
     font-size: 1em;
     padding: 0px;
     margin: 0px;
   }
-
+ 
   .overview {
     top: 200px;
     left: 150px;
   }
-
+ 
   .overview p {
     font-size: 1.6em;
   }
-
+ 
   footer {
     margin-top: 20px;
     width: 100%;
     height: auto;
     padding-top: 5px;
   }
-
+ 
   div.follow {
     width: 100%;
     height: auto;
     margin: -20px 0 0 0;
   }
-
+ 
   div.footer p {
     padding-left: 50px;
   }
-
+ 
   div.support {
     width: 100%;
     height: auto;
     margin: -17px 0 0 0;
     padding: 0px;
   }
-
+ 
   div.support ul,
   h3 {
     padding-left: 30px;
   }
-
+ 
   div.account {
     width: 100%;
     height: auto;
     margin: -17px 0 0 0;
   }
-
+ 
   div.account ul,
   h3 {
     padding-left: 30px;
   }
-
+ 
   div.useful {
     width: 100%;
     height: auto;
     margin: -17px 0 0 0;
   }
-
+ 
   div.useful ul,
   h3 {
     padding-left: 30px;
   }
-
+ 
   div .loginBlock h3 {
     width: 100%;
     height: auto;
     margin-left: 15%;
   }
-
+ 
   div.loginBlock {
     width: 95%;
-
+ 
     margin: 2%;
   }
-
+ 
   div.createAccount {
     width: 100%;
     margin-left: 15%;
-
-
+ 
+ 
   }
-
+ 
   div.alreadyUser {
     width: 100%;
     margin-left: 15%;
-
-
+ 
+ 
   }
-
+ 
   .loginBlock [type=text] {
     width: 100%;
     height: auto;
   }
-
+ 
   .loginBlock [type=email] {
     width: 100%;
     height: auto;
   }
-
+ 
   .loginBlock [type=passowrd] {
     width: 100%;
     height: auto;
   }
-
+ 
   div.productsAvailable {
     width: 100%;
     height: auto;
     margin: -20px 0px 0 0;
     padding: 0px;
   }
-
+ 
   .productsAvailable h2 {
     width: 100%;
     height: auto;
   }
-
+ 
   .productsAvailable h3 {
     width: 100%;
     height: auto;
   }
-
+ 
   div.bonsai {
     width: 120%;
     height: auto;
     margin: 0;
     text-align: center;
   }
-
+ 
   div.appleBonsai {
     width: 100%;
     height: auto;
     margin: 0px;
   }
-
+ 
   .appleImage {
     width: 100%;
     height: auto;
   }
-
+ 
   div.Description {
     width: 100%;
     height: auto;
   }
-
+ 
   div.mangoBonsai {
     width: 100%;
     height: auto;
     margin: 0px;
   }
-
+ 
   .mangoImage {
     width: 100%;
     height: auto;
   }
-
+ 
   div.grapeBonsai {
     width: 100%;
     height: auto;
     margin: 0px;
   }
-
+ 
   .grapeImage {
     width: 100%;
     height: auto;
   }
-
+ 
   div.orangeBonsai {
     width: 100%;
     height: auto;
     margin: 0px;
   }
-
+ 
   .orangeImage {
     width: 100%;
     height: auto;
   }
-
+ 
   div.bodhiBonsai {
     width: 100%;
     height: auto;
     margin: 0px;
   }
-
+ 
   .bodhiImage {
     width: 100%;
     height: auto;
   }
-
+ 
 }
-
+ 
 footer {
   clear: both;
   width: 100%;
   height: auto;
 }
-
+ 
 .follow {
   float: left;
   width: 25%;
   height: auto;
 }
-
+ 
 .follow h3 {
   background-color: black;
   color: white;
@@ -614,7 +615,7 @@ footer {
   margin-bottom: 0px;
   border-bottom: 1px ridge white;
 }
-
+ 
 .follow p {
   background-color: #202020;
   color: white;
@@ -623,13 +624,13 @@ footer {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-
+ 
 .support {
   float: left;
   width: 25%;
   height: auto;
 }
-
+ 
 .support h3 {
   background-color: black;
   color: white;
@@ -638,7 +639,7 @@ footer {
   margin-bottom: 0px;
   border-bottom: 1px ridge white;
 }
-
+ 
 .support ul {
   background-color: #202020;
   color: white;
@@ -647,13 +648,13 @@ footer {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-
+ 
 .account {
   float: left;
   width: 25%;
   height: auto;
 }
-
+ 
 .account h3 {
   background-color: black;
   color: white;
@@ -662,7 +663,7 @@ footer {
   margin-bottom: 0px;
   border-bottom: 1px ridge white;
 }
-
+ 
 .account ul {
   background-color: #202020;
   color: white;
@@ -671,13 +672,13 @@ footer {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-
+ 
 .useful {
   float: left;
   width: 25%;
   height: auto;
 }
-
+ 
 .useful h3 {
   background-color: black;
   color: white;
@@ -686,7 +687,7 @@ footer {
   margin-bottom: 0px;
   border-bottom: 1px ridge white;
 }
-
+ 
 .useful ul {
   background-color: #202020;
   color: white;
@@ -695,13 +696,13 @@ footer {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-
+ 
 .copyright {
   clear: both;
   width: 100%;
   height: auto;
 }
-
+ 
 .copyright h3 {
   background-color: #101010;
   color: white;
@@ -712,13 +713,13 @@ footer {
   text-align: center;
   margin-bottom: 0px;
 }
-
+ 
 .address {
   clear: both;
   width: 100%;
   height: auto;
 }
-
+ 
 .address h3 {
   background-color: #151515;
   color: white;
@@ -728,16 +729,16 @@ footer {
   margin-top: 0px;
   text-align: center;
 }
-
+ 
 /*---------Login-----------*/
-
+ 
 div.loginBlock {
   float: left;
   width: 100%;
   height: auto;
   margin: 0;
 }
-
+ 
 .loginBlock h3 {
   font-family: Times new roman;
   font-size: 1.5em;
@@ -748,7 +749,7 @@ div.loginBlock {
   text-align: center;
   margin: 5px 10px 10px 5px;
 }
-
+ 
 .loginBlock [type=text] {
   width: 100%;
   height: 40px;
@@ -756,7 +757,7 @@ div.loginBlock {
   border: 1px ridge #bbbbbb;
   opacity: 0.5;
 }
-
+ 
 .loginBlock [type=email] {
   width: 100%;
   height: 40px;
@@ -764,7 +765,7 @@ div.loginBlock {
   border: 1px ridge #bbbbbb;
   opacity: 0.5;
 }
-
+ 
 .loginBlock [type=password] {
   width: 100%;
   height: 40px;
@@ -772,11 +773,11 @@ div.loginBlock {
   border: 1px ridge #bbbbbb;
   opacity: 0.5;
 }
-
+ 
 .loginBlock a {
   text-decoration: none;
 }
-
+ 
 .loginBlock [type=submit] {
   border: 1px ridge #808080;
   padding: 10px 30px;
@@ -784,12 +785,12 @@ div.loginBlock {
   text-align: center;
   border-radius: 4px;
 }
-
+ 
 .createAccount label {
   display: inline-block;
   width: 70px;
 }
-
+ 
 .createAccount {
   width: 45%;
   height: auto;
@@ -797,11 +798,11 @@ div.loginBlock {
   border: 2px solid Green;
   margin: 2%;
 }
-
+ 
 .createAccount p {
   padding: 10px 80px 10px 40px;
 }
-
+ 
 .createAccount h2 {
   margin: 0px;
   background-color: #202020;
@@ -809,7 +810,7 @@ div.loginBlock {
   color: #8BC34A;
   font-weight: normal;
 }
-
+ 
 .alreadyUser {
   width: 45%;
   float: left;
@@ -817,11 +818,11 @@ div.loginBlock {
   border: 2px solid Green;
   margin: 2%;
 }
-
+ 
 .alreadyUser p {
   padding: 10px 80px 10px 40px;
 }
-
+ 
 .alreadyUser h2 {
   margin: 0px;
   background-color: #202020;
@@ -829,20 +830,20 @@ div.loginBlock {
   color: #8BC34A;
   font-weight: normal;
 }
-
+ 
 .alreadyUser label {
   display: inline-block;
   width: 70px;
 }
-
+ 
 /*-------------------BONSAI-------------------*/
-
+ 
 .productsAvailable {
   width: 100%;
   height: auto;
   padding: 0px 5px 10px 10px;
 }
-
+ 
 .productsAvailable h2 {
   font-family: Constantia;
   font-size: 1.1em;
@@ -853,7 +854,7 @@ div.loginBlock {
   margin-top: 10px;
   border-radius: 2px;
 }
-
+ 
 .productsAvailable h3 {
   font-family: Constantia;
   font-size: 1.1em;
@@ -863,7 +864,7 @@ div.loginBlock {
   margin: 0px;
   border-radius: 2px;
 }
-
+ 
 .bonsai {
   width: 100%;
   height: auto;
@@ -872,39 +873,39 @@ div.loginBlock {
   padding: 15px 0px 10px 5px;
   text-align: center;
 }
-
+ 
 .bonsai .fruitbonsai {
   float: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 10px 8px;
 }
-
+ 
 .bonsai .box {
   padding: 0px 10px;
 }
-
+ 
 .bonsaiBox:link {
   text-decoration: none;
 }
-
+ 
 .bonsaiBox:hover {
   color: green;
   text-decoration: none;
 }
-
+ 
 .fruitbonsai:hover {
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.50), 0 8px 25px 0 rgba(0, 0, 0, 0.50);
 }
-
+ 
 .box h3 {
   text-align: center;
   height: 10px;
   font-family: cursive;
   padding: 0px 5px 0px 5px;
 }
-
+ 
 /*---------AppleBonsai--------*/
-
+ 
 .appleBonsai {
   width: 100%;
   height: auto;
@@ -914,14 +915,14 @@ div.loginBlock {
   border: 2px solid darkgreen;
   text-align: center;
 }
-
+ 
 .Description {
   width: 100%;
   height: auto;
   padding: 20px;
   text-align: center;
 }
-
+ 
 .Description h2 {
   margin: auto;
   text-align: center;
@@ -930,22 +931,22 @@ div.loginBlock {
   font-size: 2em;
   color: darkgreen;
 }
-
+ 
 .select {
   text-align: center;
-
+ 
 }
-
+ 
 .Description h3 {
   text-align: center;
 }
-
+ 
 .Description p {
   text-indent: 20px;
   line-height: 25px;
   font-family: sans-serif;
 }
-
+ 
 .Description [type=submit] {
   text-decoration: none;
   border: none;
@@ -957,9 +958,9 @@ div.loginBlock {
   border-radius: 7px;
   margin-bottom: 5px;
 }
-
+ 
 /*-------Mango Bonsai------*/
-
+ 
 .mangoBonsai {
   width: 78%;
   height: auto;
@@ -969,9 +970,9 @@ div.loginBlock {
   border: 2px solid darkgreen;
   text-align: center;
 }
-
+ 
 /*------Grape Bonsai---------*/
-
+ 
 .grapeBonsai {
   width: 78%;
   height: auto;
@@ -981,7 +982,7 @@ div.loginBlock {
   border: 2px solid darkgreen;
   text-align: center;
 }
-
+ 
 /*----------Orange Bonsai--------*/
 .orangeBonsai {
   width: 78%;
@@ -992,7 +993,7 @@ div.loginBlock {
   border: 2px solid darkgreen;
   text-align: center;
 }
-
+ 
 /*------Bodhi bonsai----------*/
 .bodhiBonsai {
   width: 78%;
@@ -1003,82 +1004,82 @@ div.loginBlock {
   border: 2px solid darkgreen;
   text-align: center;
 }
-
+ 
 @media only screen and (min-width: 1020px) {
   .fruitbonsai {
     width: 24.3%;
     height: auto;
   }
-
+ 
   .fruitbonsai img {
     width: 70%;
     height: auto;
   }
-
+ 
 }
-
+ 
 @media only screen and (max-width: 789px) {
   .fruitbonsai {
     width: 32.3%;
     height: auto;
   }
-
+ 
   .fruitbonsai img {
     width: 80%;
     height: auto;
   }
-
+ 
 }
-
+ 
 @media only screen and (max-width: 540px) {
   .fruitbonsai {
     width: 50%;
     height: auto;
   }
-
+ 
   .fruitbonsai img {
     width: 80%;
     height: auto;
   }
 }
-
+ 
 @media only screen and (max-width: 500px) {
   .fruitbonsai {
     width: 42.5%;
     height: auto;
   }
-
+ 
   .fruitbonsai img {
     width: 70%;
     height: auto;
   }
-
+ 
   .box {
     font-size: 0.7em;
   }
-
-
+ 
+ 
 }
-
-
+ 
+ 
 .item1 {
   grid-area: header;
 }
-
+ 
 .item2 {
   grid-area: menu;
 }
-
+ 
 .item3 {
   grid-area: main;
 }
-
-
-
+ 
+ 
+ 
 .item5 {
   grid-area: footer;
 }
-
+ 
 .grid-container {
   display: grid;
   grid-template-areas:
@@ -1088,10 +1089,468 @@ div.loginBlock {
   gap: 10px;
   padding: 10px;
 }
-
+ 
 /* .grid-container>div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
 } */
+
+.product-image {
+  float: left;
+  width: 20%;
+}
+
+.product-details {
+  float: left;
+  width: 37%;
+}
+
+.product-price {
+  float: left;
+  width: 12%;
+}
+
+.product-quantity {
+  float: left;
+  width: 10%;
+}
+
+.product-removal {
+  float: left;
+  width: 9%;
+}
+
+.product-line-price {
+  float: left;
+  width: 12%;
+  text-align: right;
+}
+
+/* This is used as the traditional .clearfix class */
+.group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,
+.group:after,
+.shopping-cart:after,
+.column-labels:after,
+.product:after,
+.totals-item:after {
+  content: '';
+  display: table;
+}
+
+.group:after, .shopping-cart:after, .column-labels:after, .product:after, .totals-item:after {
+  clear: both;
+}
+
+.group, .shopping-cart, .column-labels, .product, .totals-item {
+  zoom: 1;
+}
+
+/* Apply clearfix in a few places */
+/* Apply dollar signs */
+.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+  content: '$';
+}
+
+/* Body/Header stuff */
+body {
+  /*padding: 0px 30px 30px 20px;*/
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+label {
+  color: #aaa;
+}
+
+.shopping-cart {
+  margin-top: -45px;
+}
+
+/* Column headers */
+.column-labels label {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+.column-labels .product-image, .column-labels .product-details, .column-labels .product-removal {
+  text-indent: -9999px;
+}
+
+/* Product entries */
+.product {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.product .product-image {
+  text-align: center;
+}
+.product .product-image img {
+  width: 100px;
+}
+.product .product-details .product-title {
+  margin-right: 20px;
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+}
+.product .product-details .product-description {
+  margin: 5px 20px 5px 0;
+  line-height: 1.4em;
+}
+.product .product-quantity input {
+  width: 40px;
+}
+.product .remove-product {
+  border: 0;
+  padding: 4px 8px;
+  background-color: #c66;
+  color: #fff;
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  font-size: 12px;
+  border-radius: 3px;
+}
+.product .remove-product:hover {
+  background-color: #a44;
+}
+
+/* Totals section */
+.totals .totals-item {
+  float: right;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.totals .totals-item label {
+  float: left;
+  clear: both;
+  width: 79%;
+  text-align: right;
+}
+.totals .totals-item .totals-value {
+  float: right;
+  width: 21%;
+  text-align: right;
+}
+.totals .totals-item-total {
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+}
+
+.checkout {
+  float: right;
+  border: 0;
+  margin-top: 20px;
+  padding: 6px 25px;
+  background-color: #6b6;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 3px;
+}
+
+.checkout:hover {
+  background-color: #494;
+}
+
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+  .shopping-cart {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+  }
+
+  .column-labels {
+    display: none;
+  }
+
+  .product-image {
+    float: right;
+    width: auto;
+  }
+  .product-image img {
+    margin: 0 0 10px 10px;
+  }
+
+  .product-details {
+    float: none;
+    margin-bottom: 10px;
+    width: auto;
+  }
+
+  .product-price {
+    clear: both;
+    width: 70px;
+  }
+
+  .product-quantity {
+    width: 100px;
+  }
+  .product-quantity input {
+    margin-left: 20px;
+  }
+
+  .product-quantity:before {
+    content: 'x';
+  }
+
+  .product-removal {
+    width: auto;
+  }
+
+  .product-line-price {
+    float: right;
+    width: 70px;
+  }
+}
+/* Make more adjustments for phone */
+@media screen and (max-width: 350px) {
+  .product-removal {
+    float: right;
+  }
+
+  .product-line-price {
+    float: right;
+    clear: left;
+    width: auto;
+    margin-top: 10px;
+  }
+
+  .product .product-line-price:before {
+    content: 'Item Total: $';
+  }
+
+  .totals .totals-item label {
+    width: 60%;
+  }
+  .totals .totals-item .totals-value {
+    width: 40%;
+  }
+}
+
+#pincode {
+  width: 100%;
+  height: 35px;
+}
+
+
+.feedback th {
+  text-align: center;
+  padding: 20px;
+}
+ 
+.feedback h4 {
+  text-align: left;
+  padding-left: 20px;
+}
+ 
+.feedback h2 {
+  background-color: #202020;
+  color: #8BC34A;
+  font-weight: bold;
+  width: 70%;
+  height: auto;
+  margin-left: 15%;
+  font-family: 'Times New Roman', Times, serif;
+}
+ 
+.survey {
+  width: 80%;
+  height: auto;
+  float: left;
+  border: 2px solid Green;
+  margin: 2%;
+}
+ 
+.survey button {
+  background-color: #8BC34A;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+ 
+.feedback h2 {
+  width: 50%;
+  height: auto;
+  margin-left: 15%;
+}
+ 
+.feedback [type=radio] {
+  width: 20px;
+  height: 20px;
+}
+ 
+.form-label h4 {
+  width: 50%;
+  height: auto;
+  margin-left: 15px;
+}
+ 
+.form-label {
+  width: 60%;
+  /* Adjust width as needed */
+  margin: 0 auto;
+  /* Center the container */
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+ 
+.form {
+  margin-bottom: 10px;
+  /* Add space between each form group */
+}
+ 
+.form label {
+  padding: 20px;
+  margin-bottom: 5px;
+  /* Add space below labels */
+  width: 120px;
+}
+ 
+.form-label {
+  border: 2px solid Green;
+}
+ 
+.form-label button {
+  background-color: #8BC34A;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+ 
+.containerblock h1 {
+  font-family: Times new roman;
+  font-size: 1.5em;
+  background-color: #202020;
+  color: #8BC34A;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  margin: 5px 10px 10px 5px;
+ 
+}
+ 
+.containerblock [type=text] {
+  min-width: 50%;
+ 
+  /* Adjust width as needed */
+  height: 40px;
+  background-color: #dddddd;
+  border: 1px ridge #bbbbbb;
+  margin-bottom: 40px;
+  /* Center the input horizontally and add bottom margin */
+ 
+ 
+}
+ 
+ 
+.containerblock [type=email] {
+  min-width: 50%;
+ 
+  height: 40px;
+  background-color: #dddddd;
+  border: 1px ridge #bbbbbb;
+  margin-bottom: 40px;
+ 
+ 
+}
+ 
+.containerblock [name=message] {
+ 
+  /* Adjust width as needed */
+  min-width: 50%;
+  height: 50px;
+  background-color: #dddddd;
+  border: 1px ridge #bbbbbb;
+  margin: 0 auto 40px;
+  /* Center the textarea horizontally and add bottom margin */
+  display: block;
+  /* Ensure textarea takes up full width */
+}
+ 
+ 
+.containerblock [type=submit] {
+  background-color: #8BC34A;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px auto;
+  /* Center the submit button horizontally */
+  display: block;
+  /* Ensure button takes up full width */
+  cursor: pointer;
+}
+ 
+ 
+.containerblock {
+  border: 2px solid Green;
+  /* width: 80%;
+  /* Adjust width as needed */
+  /* margin: 0 auto; */
+  /* Center the container */
+  /* padding: 20px;
+  justify-content: center; */
+  display: block;
+ 
+ 
+ 
+}
+ 
+ 
+.buttonContainer button {
+  background-color: #8BC34A;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+ 
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.contact label {
+  margin-right: 10px;
+ 
+}
+ 
+.classmessage label {
+  margin-right: 10px;
+}
+ 
+.classmessage {
+  display: flex;
+  /* flex-direction: column; */
+ 
+}
+ 
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.feedback .alternateRows {
+  background: #b3b3b3;
+}
+
+

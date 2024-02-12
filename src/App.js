@@ -1,48 +1,48 @@
-import React, { createContext, useState } from 'react';
+import React from 'react';
 import './App.css';
 
-import Nav from '../src/components/commonComponents/nav';
-import Sidebar from './components/commonComponents/sidebar';
-import Footer from './components/commonComponents/footer';
-import Home from './components/commonComponents/home';
-import Login from './components/login';
+import NavBar from './components/commonComponents/NavBar';
+import Sidebar from './components/commonComponents/SideBar';
+import Footer from './components/commonComponents/Footer';
+import Home from './components/commonComponents/Home';
+import Login from './components/Login';
 import PlantCategory from './components/PlantCategory';
-import DisplayProduct from './components/displayProduct';
+import DisplayProduct from './components/DisplayProducts';
 import Cart from './components/CartComponents/Cart';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// 
+import Contact from './components/AdditionalComponents/ContactUs';
+import Checkout from './components/CartComponents/Checkout';
+import ThankYouComponent from './components/CartComponents/ThankYouComponent';
+import Feedback from './components/AdditionalComponents/Feedback';
+import AboutUs from './components/AdditionalComponents/AboutUs';
+
 export const AuthProvider = React.createContext();
 
-
-
 function App() {
-
-  
   return (
-
-
-    // <IdProvider> {/* Wrap the entire component tree with IdProvider */}
     <div className="grid-container">
-      <Nav />
+      <NavBar />
       <Sidebar />
       <div className="item3">
-        
-          <Router>
-            <Routes>
-              <Route path="/Home" element={<Home />} />
-              <Route path="/Login" element={<Login />} />
-              <Route path="*" element={<Home />} />
-              <Route path="/category/:category" element={<PlantCategory />} />
-              <Route path="/displayProduct" element={<DisplayProduct />} />
-              <Route path='/Cart' element={<Cart />} />
-            </Routes>
-          </Router>
-       
+        <Router>
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/feedback" element={<Feedback />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/category/:category" element={<PlantCategory />} />
+            <Route path="/displayProduct" element={<DisplayProduct />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/checkout' element={<Checkout />} />
+            <Route path='/thankYou' element={<ThankYouComponent />} />
 
-        </div>
-        <Footer />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Router>
       </div>
-
+      <Footer />
+    </div>
   );
 }
 
