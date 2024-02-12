@@ -8,11 +8,8 @@ import Joi from "joi-browser";
 
 
 export default function Login() {
-
    
-    
     const { isLoggedIn, login, logout } = useUser();
-
     const navigate = useNavigate();
    // State hooks for user data, authentication, and form errors
     const [errors, setErrors] = useState({});
@@ -69,14 +66,14 @@ export default function Login() {
                 console.log("Error 404")
              }
     }
-
-
+   //Handler for validation
     const handleValidateChange = (e) => {
         let newUser = { ...authenticateUser };
         newUser[e.target.name] = e.target.value;
         setAuthenticateUser(newUser);
     }
-   
+
+   //Joi Schema creation
     const schema = Joi.object({
         username: Joi.string()
             .regex(new RegExp('[a-zA-Z]'))
@@ -89,9 +86,9 @@ export default function Login() {
             .required(),
     })
 
+   //Schema Validation
     const validate = () => {
         const errors = {}; //object type local variable
-        console.log("###User", user)
         const result = Joi.validate(user, schema, {
             abortEarly: true,
         });
