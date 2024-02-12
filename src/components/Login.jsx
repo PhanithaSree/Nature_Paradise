@@ -35,10 +35,7 @@ export default function Login() {
     const handleRegisterSubmit = (e) => {
         e.preventDefault();
         setErrors(validate());
-        if (user.password.length < 6) {
-            //alert("Password must be at least 6 characters long");
-            return;
-        }
+    
         postUser(user)
             .then(() => {
                 setTimeout(() => {
