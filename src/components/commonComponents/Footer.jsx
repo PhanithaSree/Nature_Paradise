@@ -27,10 +27,10 @@ export default function Footer() {
                 <div className="account">
                     <h3>My Accounts</h3>
                     <ul type="none" >
-                        <li>My account</li>
+                        
                         <li>My orders</li>
                         <li>My addresses</li>
-                        <li>My personnel information</li>
+
                     </ul>
                 </div>
                 <div className="useful">
