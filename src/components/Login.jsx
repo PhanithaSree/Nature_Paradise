@@ -10,10 +10,11 @@ import Joi from "joi-browser";
 export default function Login() {
 
    
-    //accessing the global context
+    
     const { isLoggedIn, login, logout } = useUser();
 
     const navigate = useNavigate();
+   // State hooks for user data, authentication, and form errors
     const [errors, setErrors] = useState({});
     const [user, setUser] = useState({
         username: "",
@@ -33,10 +34,12 @@ export default function Login() {
 
     }
 
+   // Handler for user registration form input changes
     const handleRegisterSubmit = (e) => {
         e.preventDefault();
         setErrors(validate());
-    
+
+       // Post user data to the server for registration
         postUser(user)
             .then(() => {
                 setTimeout(() => {
@@ -52,10 +55,9 @@ export default function Login() {
             });
     }
 
+    // Handler for user login form submission
     const handleValidateSubmit = async (e) => {
-        e.preventDefault();
-       // setLoginErrors(validateLogin());
-        // try {
+             e.preventDefault();
              const response = await validateUser(authenticateUser)
              if(response)
              {
@@ -74,7 +76,7 @@ export default function Login() {
         newUser[e.target.name] = e.target.value;
         setAuthenticateUser(newUser);
     }
-
+   
     const schema = Joi.object({
         username: Joi.string()
             .regex(new RegExp('[a-zA-Z]'))
