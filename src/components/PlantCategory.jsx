@@ -3,10 +3,10 @@ import { useParams,useNavigate } from "react-router-dom";
  
 export default function PlantCategory() {
     const navigate = useNavigate();
- 
+    // Extracting the category parameter from the URL 
     const { category } = useParams();
  
- 
+    // Function to get a list of images based on the selected category
     const getImagesForCategory = () => {
         if (category === "Bonsai") {
             return [
@@ -83,16 +83,18 @@ export default function PlantCategory() {
         }
     };
  
- 
+    // Function to handle click on image and navigate to displayProduct page
     const handleBonsaiClick = (imageName) => {
         // Redirect to displayProduct page with product name and category as query parameters
         navigate(`/displayProduct?prodName=${imageName}&prodCat=${category}`);
         // <DisplayProduct category={category} productName={imageName} />
  
     };
- 
- 
+
+    // Get the list of images for the selected category
     const images = getImagesForCategory();
+
+    // Function to extract the image name from the image path
     const getImageName = (imagePath) => {
         const parts = imagePath.split("/");
         const fileName = parts[parts.length - 1];
@@ -131,7 +133,23 @@ export default function PlantCategory() {
                         <div className="bonsaiBox" onClick={() => handleBonsaiClick(getImageName(image))}>
                             <img src={image} alt={`${category} XXX`} />
                             <div className="box">
-                                <h3>{`${getImageName(image)} ${category === "Bonsai" ? "" : category === "flowerSaplings" ? "Flowers" : category === "fruitSaplings" ? "Fruits" : category === "veggies" ? "" : ""}`}</h3>
+                                <h3>
+                                 {`${getImageName(image)} ${category === "Bonsai" ? "" : category === "flowerSaplings" ? "Flowers" : category === "fruitSaplings" ? "Fruits" : category === "veggies" ? "" : ""}`}
+                                  {(() => {
+        const categoryName = getImageName(image);
+        if (category === "Bonsai") {
+            return categoryName;
+        } else if (category === "flowerSaplings") {
+            return `${categoryName} Flowers`;
+        } else if (category === "fruitSaplings") {
+            return `${categoryName} Fruits`;
+        } else if (category === "veggies") {
+            return categoryName;
+        } else {
+            return "";
+        }
+    })()}
+                                </h3>
                             </div>
                         </div>
                     </div>
