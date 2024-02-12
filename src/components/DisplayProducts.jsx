@@ -92,7 +92,7 @@ export default function DisplayProduct() {
                     <div className="Description">
                         <p>{product.productDescription}</p>
                         <div className="select">
-                            <h3>₹{product.price}</h3>
+                            <h3>${product.price}</h3>
                             <input type="submit" value="Add To Cart" onClick={() => handleCartClick(product._id)} />
                         </div>
                     </div>
