@@ -1,19 +1,17 @@
 import React from "react";
-// import bonsai from "../bonsai";
 
-export default function sidebar() {
+export default function SideBar() {
     return (
-        <div class="item2 menu">
+        <div className="item2 menu">
             <p>PRODUCT CATEGORIES</p>
-            <a class="links" href="/category/Bonsai">Bonsai</a>
-            <a class="links" href="/category/flowers">Flower saplings</a>
-            <a class="links" href="/category/fruits">Fruit saplings</a>
-            <a class="links" href="/category/manure">Organic manure</a>
-            <a class="links" href="/category/tools">Gardening tools</a>
-            <a class="links" href="/category/veggies">Vegetable saplings</a>
-            <a class="links" href="#">Fruit seeds</a>
-            <a class="links" href="#">Vegetable seeds</a>
-            <a class="links" href="#">Special Offers</a>
+            <a className="links" href="/category/Bonsai">Bonsai</a>
+            <a className="links" href="/category/Flowers">Flower saplings</a>
+            <a className="links" href="/category/fruits">Fruit saplings</a>
+            <a className="links" href="/category/manure">Organic manure</a>
+            <a className="links" href="/category/tools">Gardening tools</a>
+            <a className="links" href="/category/veggies">Vegetable saplings</a>
+            <a className="links" href="#">Fruit seeds</a>
+            <a className="links" href="#">Vegetable seeds</a>
         </div>
 
 

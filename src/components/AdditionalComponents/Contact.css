@@ -1,0 +1,62 @@
+.containerblock h1{
+    font-family: Times new roman;
+    font-size: 1.5em;
+    background-color: #202020;
+     color: #8BC34A;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    margin: 5px 10px 10px 5px;
+   
+  }
+   
+  .containerblock [type=text]{
+    width: 30%;
+    height: 40px;
+    background-color: #dddddd;
+    border: 1px ridge #bbbbbb;
+  }
+  .containerblock [type=email]{
+    width: 30%;
+    height: 40px;
+    background-color: #dddddd;
+    border: 1px ridge #bbbbbb;
+   
+  }
+  .containerblock [name=message]{
+    width: 30%;
+    height: 50px;
+    background-color: #dddddd;
+    border: 1px ridge #bbbbbb;
+   
+   
+  }
+  .containerblock [type=submit]{
+    background-color:#8BC34A ;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  .containerblock {
+    border: 2px solid Green;
+    width: 50%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+   }
+  .contact label {
+    margin-right: 20px; /* Add space between label and input */
+    margin-bottom: 20px;
+    
+  }
+  .buttonContainer button{
+    background-color:#8BC34A ;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+   

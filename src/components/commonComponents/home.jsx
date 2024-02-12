@@ -1,12 +1,11 @@
 import React from "react";
-// import Sapling from '../src/assets/nature/Sapling.png'
 
-export default function home() {
+export default function Home() {
     return (
         <div className="item3">
-            <div class="mainPic">
+            <div className="mainPic">
                 <img src="/assets/nature/Sapling.png" alt="sapling" width="100%" />
-                <div class="overview">
+                <div className="overview">
                     <p>Anything and Everything to MAKE and MAINTAIN your Garden ...</p>
                 </div>
             </div>
