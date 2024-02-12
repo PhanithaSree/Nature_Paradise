@@ -9,11 +9,12 @@ import Joi from "joi-browser";
 
 export default function Login() {
 
-    const [errors, setErrors] = useState({});
-    //const [loginErrors,setLoginErrors] = useState({});
+   
+    //accessing the global context
     const { isLoggedIn, login, logout } = useUser();
 
     const navigate = useNavigate();
+    const [errors, setErrors] = useState({});
     const [user, setUser] = useState({
         username: "",
         email: "",
