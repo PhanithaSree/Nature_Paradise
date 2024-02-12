@@ -9,11 +9,10 @@ import Joi from "joi-browser";
 
 export default function Login() {
 
-    const [errors, setErrors] = useState({});
-    //const [loginErrors,setLoginErrors] = useState({});
     const { isLoggedIn, login, logout } = useUser();
-
     const navigate = useNavigate();
+    // State hooks for user data, authentication, and form errors
+    const [errors, setErrors] = useState({});
     const [user, setUser] = useState({
         username: "",
         email: "",
@@ -32,13 +31,12 @@ export default function Login() {
 
     }
 
+    // Handler for user registration form input changes
     const handleRegisterSubmit = (e) => {
         e.preventDefault();
         setErrors(validate());
-        if (user.password.length < 6) {
-            //alert("Password must be at least 6 characters long");
-            return;
-        }
+
+        // Post user data to the server for registration
         postUser(user)
             .then(() => {
                 setTimeout(() => {
@@ -54,29 +52,26 @@ export default function Login() {
             });
     }
 
+    // Handler for user login form submission
     const handleValidateSubmit = async (e) => {
         e.preventDefault();
-       // setLoginErrors(validateLogin());
-        // try {
-             const response = await validateUser(authenticateUser)
-             if(response)
-             {
-                login()
-                console.log(isLoggedIn)
-             }
-             else
-             {
-                console.log("Error 404")
-             }
+        const response = await validateUser(authenticateUser)
+        if (response) {
+            login()
+            console.log(isLoggedIn)
+        }
+        else {
+            console.log("Error 404")
+        }
     }
-
-
+    //Handler for validation
     const handleValidateChange = (e) => {
         let newUser = { ...authenticateUser };
         newUser[e.target.name] = e.target.value;
         setAuthenticateUser(newUser);
     }
 
+    //Joi Schema creation
     const schema = Joi.object({
         username: Joi.string()
             .regex(new RegExp('[a-zA-Z]'))
@@ -89,9 +84,9 @@ export default function Login() {
             .required(),
     })
 
+    //Schema Validation
     const validate = () => {
         const errors = {}; //object type local variable
-        console.log("###User", user)
         const result = Joi.validate(user, schema, {
             abortEarly: true,
         });
@@ -111,16 +106,16 @@ export default function Login() {
                     <h2>Add Account</h2>
                     <p><label htmlFor="username">Name</label>
                         <input type="text" name="username" required="required" onChange={handleRegisterChange}></input></p>
-                        {errors && errors.username && <small style={{ "color": "red" }}>{errors.username}</small>}
+                    {errors && errors.username && <small style={{ "color": "red" }}>{errors.username}</small>}
 
                     <p><label htmlFor="email">Email  </label>
                         <input type="email" name="email" required="required" onChange={handleRegisterChange} />
                         {errors && errors.email && <small style={{ "color": "red" }}>{errors.email}</small>}
-                        </p>
+                    </p>
                     <p><label htmlFor="password">Password </label>
                         <input type="password" name="password" required="required" onChange={handleRegisterChange} />
                         {errors && errors.password && <small style={{ "color": "red" }}>{errors.password}</small>}
-                        </p>
+                    </p>
                     <p><a href="/Home"><input type="submit" value="Create Account" onClick={handleRegisterSubmit} /></a></p>
                 </form>
             </div>
@@ -129,11 +124,11 @@ export default function Login() {
                     <h2>Already a User??</h2>
                     <p><label htmlFor="email">Email  </label>
                         <input type="email" name="email" required="required" onChange={handleValidateChange} />
-                        </p>
+                    </p>
                     <p><label htmlFor="password">Password </label>
                         <input type="password" name="password" required="required" onChange={handleValidateChange} />
-                        
-                        </p>
+
+                    </p>
                     <p><a href="/Home"><input type="submit" value="Login" onClick={handleValidateSubmit} /></a></p>
                     <br />
                     <br />
@@ -145,12 +140,3 @@ export default function Login() {
         </div>
     )
 }
-
-
-
-
-
-
-
-
-
