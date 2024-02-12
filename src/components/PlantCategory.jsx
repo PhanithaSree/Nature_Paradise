@@ -85,7 +85,7 @@ export default function PlantCategory() {
  
  
     const handleBonsaiClick = (imageName) => {
-        // Redirect to displayProduct page with bonsai name and category as query parameters
+        // Redirect to displayProduct page with product name and category as query parameters
         navigate(`/displayProduct?prodName=${imageName}&prodCat=${category}`);
         // <DisplayProduct category={category} productName={imageName} />
  
