@@ -9,7 +9,7 @@ import Login from './components/Login';
 import PlantCategory from './components/PlantCategory';
 import DisplayProduct from './components/DisplayProducts';
 import Cart from './components/CartComponents/Cart';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Contact from './components/AdditionalComponents/ContactUs';
 import Checkout from './components/CartComponents/Checkout';
 import ThankYouComponent from './components/CartComponents/ThankYouComponent';
@@ -24,7 +24,7 @@ function App() {
       <NavBar />
       <Sidebar />
       <div className="item3">
-        <Router>
+        <BrowserRouter>
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
@@ -39,7 +39,7 @@ function App() {
 
             <Route path="*" element={<Home />} />
           </Routes>
-        </Router>
+        </BrowserRouter>
       </div>
       <Footer />
     </div>

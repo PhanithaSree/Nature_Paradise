@@ -55,7 +55,7 @@ export default function Login() {
     }
 
     const handleValidateSubmit = async (e) => {
-        //e.preventDefault();
+        e.preventDefault();
        // setLoginErrors(validateLogin());
         // try {
              const response = await validateUser(authenticateUser)
@@ -68,27 +68,6 @@ export default function Login() {
              {
                 console.log("Error 404")
              }
-        //      if(response.status===200)
-        //      {
-        //     setTimeout(() => {
-        //         toast.success("Logged in successfully!");
-        //     }, 1000); // Show toast after 1 second
-        //  }
-        // else{
-        //     setTimeout(() => {
-        //         toast.error("Login failed. Please try again.");
-        //     }, 1000);
-        // }
-            //login();
-            //navigate('/Cart')
-
-        // } catch (error) {
-        //     console.error("Error validating user:", error);
-        //     setTimeout(() => {
-        //         toast.error("Login failed. Please try again.");
-        //     }, 1000); // Show toast after 1 second
-        //     //navigate('/Login')
-        // }
     }
 
 

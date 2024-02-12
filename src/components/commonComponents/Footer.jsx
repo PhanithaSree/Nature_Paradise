@@ -1,6 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
+    const footerStyle ={
+        textDecoration: 'none', color: 'white'
+    }
     return (
 
         <div className="item5">
@@ -14,11 +18,10 @@ export default function Footer() {
                 <div className="support">
                     <h3>Support</h3>
                     <ul type="none" >
-                        <li>Home</li>
-                        <li>Products available</li>
-                        <li>About Us</li>
-                        <li>Contact us</li>
-                        <li>Feedback</li>
+                        <li><a href="/" style={footerStyle}>Home</a></li>
+                        <li><a href="/about" style={footerStyle}>About Us</a></li>
+                        <li><a href="/contact" style={footerStyle}>Contact us</a></li>
+                        <li><a href="/feedback" style={footerStyle}>Feedback</a></li>
                     </ul>
                 </div>
                 <div className="account">

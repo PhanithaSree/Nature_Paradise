@@ -162,6 +162,7 @@ const displayCart = async (id) => {
     }
 }
 
+
 // empty the cart after checkout
 
 const emptyCartUrl = "http://localhost:4000/api/user/emptyCart";

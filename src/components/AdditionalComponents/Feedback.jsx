@@ -1,75 +1,75 @@
-import React from "react";
-// import 'bootstrap/dist/css/bootstrap.min.css';
- 
-export default function Feedback() {
+import React, { useState } from 'react';
+import './FeedbackForm.css';
+import { toast, ToastContainer } from 'react-toastify';
+import { useUser } from '../context/userContext';
+
+const Feedback = () => {
+
+
+    const { isLoggedIn } = useUser();
+
+  const [feedback, setFeedback] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFeedback(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // You can handle form submission here
+    console.log(feedback);
+    // Clear the form after submission
+    setFeedback({
+      name: '',
+      email: '',
+      message: ''
+    });
+
+    setTimeout(() => {
+        toast.success("Thank you for your Feedback!");
+    }, 1000); 
+  };
+
+ if(isLoggedIn){
     return (
-        <div className="feedback">
-            <h2>Customer Satisfaction Survey</h2>
-            <div className="survey" >
-                <h4>Please rate your satisfaction with...</h4>
-                <form>
-                    <table className="table" >
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Highly Satisfied</th>
-                                <th>Satisfied</th>
-                                <th>Neither Satisfied nor Dissatisfied</th>
-                                <th>Dissatisfied</th>
-                                <th>Highly Dissatisfied</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="alternateRows">
-                                <td>Speed of Delivery</td>
-                                <td><input type="radio" name="speed" /></td>
-                                <td><input type="radio" name="speed" /></td>
-                                <td><input type="radio" name="speed" /></td>
-                                <td><input type="radio" name="speed" /></td>
-                                <td><input type="radio" name="speed" /></td>
- 
-                            </tr>
-                            <tr>
-                                <td>Product Quality</td>
-                                <td><input type="radio" name="quality" /></td>
-                                <td><input type="radio" name="quality" /></td>
-                                <td><input type="radio" name="quality" /></td>
-                                <td><input type="radio" name="quality" /></td>
-                                <td><input type="radio" name="quality" /></td>
- 
-                            </tr>
-                            <tr className="alternateRows">
-                                <td>Order Process</td>
-                                <td><input type="radio" name="order" /></td>
-                                <td><input type="radio" name="order" /></td>
-                                <td><input type="radio" name="order" /></td>
-                                <td><input type="radio" name="order" /></td>
-                                <td><input type="radio" name="order" /></td>
- 
-                            </tr>
-                            <tr>
-                                <td>Website Usability</td>
-                                <td><input type="radio" name="website" /></td>
-                                <td><input type="radio" name="website" /></td>
-                                <td><input type="radio" name="website" /></td>
-                                <td><input type="radio" name="website" /></td>
-                                <td><input type="radio" name="website" /></td>
- 
-                            </tr>
-                            <tr className="alternateRows">
-                                <td>Overall Experience</td>
-                                <td><input type="radio" name="Experience" /></td>
-                                <td><input type="radio" name="Experience" /></td>
-                                <td><input type="radio" name="Experience" /></td>
-                                <td><input type="radio" name="Experience" /></td>
-                                <td><input type="radio" name="Experience" /></td>
- 
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button>Submit</button>
-                </form>
+    
+        <div className="feedback-container">
+          <h2>Feedback Form</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Name:</label>
+              <input type="text" id="name" name="name" value={feedback.name} onChange={handleChange} required />
             </div>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input type="email" id="email" name="email" value={feedback.email} onChange={handleChange} required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Message:</label>
+              <textarea id="message" name="message" value={feedback.message} onChange={handleChange} required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+          <ToastContainer/>
         </div>
-    )
+      )
+    }
+    else
+    {
+        return(
+            <h1 style={{"textAlign":"center"}}>Please Login to continue</h1>
+        )
+    }
 }
+
+  
+
+export default Feedback;

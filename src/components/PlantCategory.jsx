@@ -42,7 +42,7 @@ export default function PlantCategory() {
                 "/assets/Fruits/guava.jpg",
                 "/assets/Fruits/guavaSapling.jpg",
                 "/assets/Fruits/mango.jpg",
-                "/assets/Fruits/mangoSapling.jpg"
+                
             ];
         }
  
@@ -104,7 +104,25 @@ export default function PlantCategory() {
         <div>
             <div className="productsAvailable">
                 <h2>Products Available</h2>
-                <h3>{category === "Bonsai" ? "Bonsai" : category === "Flowers" ? "Flowers" : category === "manure" ? "Manure" : category === "tools" ? " Gardening Tools" : category === "fruits" ? "Fruits" : ""}</h3>
+                <h3>
+  {
+    (() => {
+      if (category === "Bonsai") {
+        return "Bonsai";
+      } else if (category === "Flowers") {
+        return "Flowers";
+      } else if (category === "manure") {
+        return "Manure";
+      } else if (category === "tools") {
+        return "Gardening Tools";
+      } else if (category === "fruits") {
+        return "Fruits";
+      } else {
+        return "";
+      }
+    })()
+  }
+</h3>
  
             </div>
             <div className="bonsai">
