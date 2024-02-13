@@ -10,7 +10,7 @@ import Joi from "joi-browser";
 export default function Login() {
 
     const { isLoggedIn, login, logout } = useUser();
-    const navigate = useNavigate();
+
     // State hooks for user data, authentication, and form errors
     const [errors, setErrors] = useState({});
     const [user, setUser] = useState({
@@ -105,15 +105,15 @@ export default function Login() {
                 <form onSubmit={handleRegisterSubmit}>
                     <h2>Add Account</h2>
                     <p><label htmlFor="username">Name</label>
-                        <input type="text" name="username" required="required" onChange={handleRegisterChange}></input></p>
+                        <input type="text" name="username" value={user.username} required="required" onChange={handleRegisterChange}></input></p>
                     {errors && errors.username && <small style={{ "color": "red" }}>{errors.username}</small>}
 
                     <p><label htmlFor="email">Email  </label>
-                        <input type="email" name="email" required="required" onChange={handleRegisterChange} />
+                        <input type="email" name="email" value={user.name} required="required" onChange={handleRegisterChange} />
                         {errors && errors.email && <small style={{ "color": "red" }}>{errors.email}</small>}
                     </p>
                     <p><label htmlFor="password">Password </label>
-                        <input type="password" name="password" required="required" onChange={handleRegisterChange} />
+                        <input type="password" name="password" value={user.password} required="required" onChange={handleRegisterChange} />
                         {errors && errors.password && <small style={{ "color": "red" }}>{errors.password}</small>}
                     </p>
                     <p><a href="/Home"><input type="submit" value="Create Account" onClick={handleRegisterSubmit} /></a></p>
@@ -123,10 +123,10 @@ export default function Login() {
                 <form onSubmit={handleValidateSubmit}>
                     <h2>Already a User??</h2>
                     <p><label htmlFor="email">Email  </label>
-                        <input type="email" name="email" required="required" onChange={handleValidateChange} />
+                        <input type="email" name="email" value={authenticateUser.email} required="required" onChange={handleValidateChange} />
                     </p>
                     <p><label htmlFor="password">Password </label>
-                        <input type="password" name="password" required="required" onChange={handleValidateChange} />
+                        <input type="password" name="password" value={authenticateUser.password} required="required" onChange={handleValidateChange} />
 
                     </p>
                     <p><a href="/Home"><input type="submit" value="Login" onClick={handleValidateSubmit} /></a></p>
