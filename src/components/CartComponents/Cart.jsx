@@ -37,12 +37,15 @@ const CheckoutPanel = ({ productIdToCountMap }) => {
 const ShoppingCart = ({ product, count }) => {
  
     const { isLoggedIn, login, logout, user } = useUser();
+
+    const [counter,setCount] = useState(0);
  
     const handleRemoveFromCart = async () => {
         const resp = await deleteFromCart(user, product["_id"])
  
         window.location.reload();
     }
+
  
     return (
         <div className="shopping-cart">

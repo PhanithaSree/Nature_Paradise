@@ -74,11 +74,7 @@ export default function PlantCategory() {
                 "/assets/veggies/ladySap.jpg",
                 "/assets/veggies/ladysFinger.jpg",
                 "/assets/veggies/pumkin.jpg",
-                "/assets/veggies/pumkinSap.jpg",
-                "/assets/veggies/tomato.jpg",
-                "/assets/veggies/tomatoSap.jpg"
- 
- 
+               
             ]
         }
     };
@@ -117,7 +113,11 @@ export default function PlantCategory() {
         return "Gardening Tools";
       } else if (category === "fruits") {
         return "Fruits";
-      } else {
+      }
+      else if (category === "veggies") {
+        return "veggies";
+      }
+      else {
         return "";
       }
     })()
